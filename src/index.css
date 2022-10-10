@@ -1,13 +1,267 @@
-body {
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  position: fixed;
+  height: 90px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition: 0.3s ease-in;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.btn-form-contact{
+  width: 160px;
+    height: 40px;
+    background: transparent;
+    color: #ffffff;
+    border: 1.5px solid #a2a2a2;
+    margin-top: 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+}
+.btn-form-contact:hover{
+  background-color: #0e66f9;
+  border: none;
+  transition: 0.5s;
+  color: #ffffff;
+}
+
+.activeH {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1240px;
+  margin: auto;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+.header .nav-menu a {
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  top: 6px;
+  padding: 0 5px;
+}
+
+
+.header .navbar img {
+  display: block;
+  max-width: 100%;
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  margin: auto;
+}
+
+.header .nav-menu {
+  display: flex;
+}
+
+.header .nav-item {
+  padding: 1rem;
+  font-weight: 500;
+}
+
+.header .nav-item a:hover {
+  padding-bottom: 12px;
+  border-bottom: 3px solid black;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger i {
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #c00000;
+  font-size: 18px;
+  padding: 0px 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  width: 200px;
+  max-width: 100%;
+  border-radius: 2px;
+  color: white;
+}
+
+.btn-primary:hover{
+  background: crimson;
+  transition: all 0.5s;
+}
+.btn-primary:hover i{
+  transform: scale(1.3) translate(3px);
+  transition: all 0.4s;
+}
+
+@media screen and (max-width: 940px) {
+  .header {
+    max-width: 100%;
+    background-color: white;
+  }
+
+  .header .navbar {
+    max-width: 100%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 90px;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+
+  .header .navbar img {
+    width: 150px;
+  }
+}
+
+.welcome{
+  background-color: #ffffff;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  margin: 50px 0px;
+}
+
+.wlcome-home{
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+
+}
+.wlcome-home h2{
+  font-size: 70px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+.wlcome-home p{
+  font-size: 40px;
+  margin-top: 15px;
+}
+.homi-btn button{
+   margin-top: 80px;
+   width: 280px;
+   max-width: 100%;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   border: none;
+   background-color:#c00000 ;
+   color: white;
+   font-size: 20px;
+   font-weight: bold;
+   padding: 0px 20px;
+   border-radius: 2px;
+}
+.homi-btn i{
+ font-size: 25px;
+ font-weight: thin;
+}
+.homi-btn button:hover{
+  transition: all 0.5s;
+  background-color:crimson;
+}
+
+.homi-btn button:hover  i{
+  transform: scale(1.3) translate(3px);
+  transition: all 0.4s;
+}
+.transform{
+  padding: 40px 55px;
+}
+.transform h2{
+  font-size: 38px;
+  opacity: 0.9;
+  /* letter-spacing: 1px; */
+}
+
+/* ================card css================ */
+
+.card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0px;
+}
+.card-box{
+  background: #ffffff;
+ width: 270px;
+ max-width: 100%;
+}
+.card-box .card-box-1{
+ 
+  padding: 50px 20px;
+  background-color: black;
+  opacity: 0.95;
+}
+.card-box .card-box-1 img{
+  max-width: 200px;
+  width: 100%;
+  display: block;
+  margin:auto;
+
+}
+.card-box-2{
+  padding: 20px 20px;
+  background-color: black;
+}
+.card-box-2 h2{
+  font-size: 25px;
+  color: white;
+  margin-top: 20px;
+}
+.card-box-2 i{
+  margin-top: 20px;
+  font-size: 30px;
+  color: white;
 }
