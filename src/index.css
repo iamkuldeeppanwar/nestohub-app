@@ -161,6 +161,11 @@ a {
   .header .navbar img {
     width: 150px;
   }
+
+  .btn-primary{
+    display: block;
+    margin: auto;
+  }
 }
 
 .welcome{
@@ -237,6 +242,7 @@ a {
   background: #ffffff;
  width: 270px;
  max-width: 100%;
+ margin: 0 3px;
 }
 .card-box .card-box-1{
   padding: 40px 20px;
@@ -325,18 +331,7 @@ a {
   color: #6c6c6c;
   
 }
-/* #overlayText {
-  position:absolute;
-   top:30%;
-   left:20%;
-   z-index:1;
- }
- 
- #topText {
-   color: white;
-   font-size: 20px;
-   align-self: center;
- } */
+
 
  .video-player video{
   width: 1200px;
@@ -451,4 +446,218 @@ a {
    transform: scale(1.3) translate(3px);
    transition: all 0.4s;
  }
+
+ /* =============================swiper js============================ */
+.swift-js{
+  background-color: #ffffff;
+  border: 1px solid black;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 60px 55px;
+  border-radius: 10px;
+  border: 1px solid  #8d8d8d;
+}
+.swift-img img{
+  width: 180px;
+  height: 180px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.swift-para{
+  margin-top: 25px;
+}
+
+.swift-para .first-para{
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.small-para{
+  margin-top: 20px;
+}
+.small-para .second-para{
+  font-size: 17px;
+  color: #8d8d8d;
+}
+.small-para .third-para{
+  font-size: 17px;
+  color: #8d8d8d;
+}
+.swifters-para .fourt-para{
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+@media only screen and (max-width:945px){
+  .card{
+    flex-direction: column;
+    
+  }
+
+  .card-box{
+    width: 500px;
+    max-width: 100%;
+    object-fit: cover;
+    margin: 15px 0px;
+  }
+}
+
+@media only screen and (max-width:883px){
+  .swift-js{
+    flex-direction: column;
+    align-items: center;
+  }
+  .agent-secret{
+    flex-direction: column;
+  }
+  .customer-1{
+    flex-direction: column;
+  }
+  .quote span{
+    font-size: 60px;
+  }
+}
+
+@media only screen and (max-width:550px){
+  .wlcome-home h2{
+    font-size: 50px;
+  }
+  .wlcome-home p{
+    font-size: 30px;
+  }
+  .transform{
+    padding: 40px 20px;
+  }
+  .quote{
+    padding: 120px 20px;
+  }
+  .see-how{
+    padding: 100px 20px;
+  }
+  .our-customer{
+    padding: 60px 20px;
+  }
+  .swift-js{
+    padding: 60px 20px;
+  }
+  .swifters-para{
+    margin-top: 40px;
+  }
+  .swifters-para .fourt-para{
+    font-size: 15px;
+  }
+  .card-box h2{
+    text-align: center;
+  }
+  .card-box i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .quote span{
+    font-size: 40px;
+  }
+  .quote-icon i{
+    font-size: 40px;
+  }
+  .customer-1 h2{
+    font-size: 35px;
+  }
+  .custom-btn{
+    display: block;
+    margin:20px auto;
+  }
+  .custom-btn button{
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .custom-btn i{
+    font-size: 16px;
+  }
+  .connect-btn button{
+    font-size: 16px;
+  }
+  .connect-btn i{
+    font-size: 16px;
+  }
+  .homi-btn button{
+    font-size: 16px;
+  }
+  .homi-btn i{
+    font-size: 16px;
+  }
+  .agent h2{
+    font-size: 32px;
+  }
+  .agent-1{
+    margin-top: 20px;
+  }
+  .agent-1 p{
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width:309px){
+  .wlcome-home h2{
+    font-size: 30px;
+  }
+  .wlcome-home p{
+    font-size: 20px;
+  }
+  .transform h2{
+    font-size: 30px;
+  }
+  .card-box-2 h2{
+    font-size: 25px;
+  }
+  .agent h2{
+    font-size: 30px;
+  }
+  .agent-1 p{
+    font-size: 15px;
+  }
+  .customer-1 h2{
+    font-size: 30px;
+  }
+  .vid-btn button{
+    font-size: 15px;
+  }
+  .custom-btn button{
+    width: auto;
+  }
+  .custom-btn i{
+    margin: 0 8px;
+  }
+  .connect-btn button{
+    width: auto;
+  }
+  .connect-btn i{
+    margin: 0 8px;
+  }
+  .homi-btn button{
+    width: auto;
+  }
+  .homi-btn i{
+    margin: 0 8px;
+  }
+  .quote span{
+    font-size: 25px;
+  }
+  .quote-para .first-p{
+    font-size: 20px;
+  }
+  .quote-para .second-p{
+    font-size: 12px;
+  }
+  .quote-icon i{
+    font-size: 25px;
+  }
+  .quote{
+    padding: 60px 20px;
+  }
+}
+
+
  
