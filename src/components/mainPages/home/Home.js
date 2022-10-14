@@ -9,11 +9,12 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 import "./styles.css";
-
 import {  Navigation, Pagination, Keyboard } from "swiper";
-const Home = () => {
+import HomePop from "./HomePop";
+
+const Home = ({pop,setPop}) => {
+  
   const videoRef = useRef();
   const handlePlay = () =>{
      videoRef.current.play();
@@ -29,7 +30,7 @@ const Home = () => {
           <h2>Welcome Back.</h2>
           <p>Growing your business is just a click away</p>
           <div className="homi-btn">
-            <button>
+            <button onClick={() => setPop(true)}>
               <span>Let's Chat</span>{" "}
               <i className="fa-solid fa-arrow-right"></i>
             </button>
@@ -124,7 +125,7 @@ const Home = () => {
             </video>
           </div>
           <div className="connect-btn">
-              <button> <span>Connect to Learn More</span>  <i className="fa-solid fa-arrow-right"></i></button>
+              <button onClick={() => setPop(true)}> <span>Connect to Learn More</span>  <i className="fa-solid fa-arrow-right"></i></button>
           </div>
       </div>
      {/* ===========================customer section=================== */}
@@ -240,6 +241,11 @@ const Home = () => {
       </Swiper>
      
       </div>
+
+      
+      {
+        pop && <HomePop setPop = {setPop}/>
+      }
     </>
   );
 };
