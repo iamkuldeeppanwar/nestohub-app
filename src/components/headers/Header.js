@@ -4,8 +4,6 @@ const Header = ({setPop}) => {
   const handleClick = () => setClick(!click)
   const closeMenu = () => setClick(false)
   const [navColor,setNavColor]=useState(false);
-
- 
   const changeNavColor =()=>{
       if(window.scrollY >= 20){
           setNavColor(true)
