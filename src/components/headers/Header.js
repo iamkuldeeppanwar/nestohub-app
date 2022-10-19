@@ -22,8 +22,8 @@ const Header = ({setPop}) => {
             {/* <img src={logo} alt='logo' /> */}
         </a>
         <div className='hamburger' onClick={handleClick}>
-            {click ? (<i class="fa-solid fa-xmark"></i>)
-                : (<i class="fa-solid fa-bars"></i>)}
+            {click ? (<i className="fa-solid fa-xmark"></i>)
+                : (<i className="fa-solid fa-bars"></i>)}
 
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>

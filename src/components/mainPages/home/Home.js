@@ -86,13 +86,13 @@ const Home = ({pop,setPop}) => {
 
       <div className="quote">
         <div className="quote-icon">
-        <i class="fa-solid fa-quote-left left-quo"></i>
+        <i className="fa-solid fa-quote-left left-quo"></i>
         </div>
         <div className="quote-head">
          <span>Compass exists to make agents more successful. We work for our agents, not the other way around.</span>
          </div>
          <div className="quote-icon">
-         <i class="fa-solid fa-quote-right right-quo"></i>
+         <i className="fa-solid fa-quote-right right-quo"></i>
         </div>
         <div className="quote-para">
             <p className="first-p">Robert Reffkin</p>

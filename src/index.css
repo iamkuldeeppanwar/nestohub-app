@@ -831,7 +831,10 @@ a {
   float: left;
   margin-right: 5%;
 }
-
+.text-error{
+  color: red;
+  font-weight: 600;
+}
 
 .top-form .inner-form:last-child {
   margin-right: 0;
@@ -886,6 +889,24 @@ a {
   color: transparent !important;
     border: 1.5px solid #c1bfbf;
     border-radius: 50%;
+}
+
+/* ===================mera================= */
+.css-4ff9q7{
+  color: #c1bfbf  !important;
+  border: 1.5px solid crimson;
+  border-radius: 50%;
+ 
+}
+.css-10psl7k{
+  fill: rgb(142, 136, 136) !important;
+}
+
+.css-2fdkz6 {
+  display: none !important;
+}
+.css-1v2gfp5{
+  display: none !important;
 }
 
 
