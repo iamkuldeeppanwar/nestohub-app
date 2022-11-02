@@ -1,135 +1,208 @@
-import React,{useRef,useState} from "react";
-import growBusiness from '../../../images/growbusiness.jpg';
-import nesto from '../../../images/nest.mp4';
-import post from '../../../images/post.png';
-import man2 from '../../../images/man2.png';
-import { Swiper, SwiperSlide } from "swiper/react";
-
+import React from "react";
+// import man2 from '../../../images/man2.png';
+// import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./styles.css";
-import {  Navigation, Pagination, Keyboard } from "swiper";
+// import {  Navigation, Pagination, Keyboard } from "swiper";
 import HomePop from "./HomePop";
+import manHome from '../../../images/manHome.png';
+import app from '../../../images/app.png';
+import google from '../../../images/google-play.png';
+import real from '../../../images/real.png';
+import mansa from '../../../images/mansa.png';
+import radiobtn from '../../../images/radiobtn.png';
+import benifits from '../../../images/benifits.png';
+import card1 from '../../../images/card1.png';
+import card2 from '../../../images/card2.png';
+import card3 from '../../../images/card3.png';
+import women from '../../../images/women.png';
 
 const Home = ({pop,setPop}) => {
   
-  const videoRef = useRef();
-  const handlePlay = () =>{
-     videoRef.current.play();
-  }
-
-  const handlePause = () =>{
-     videoRef.current.pause();
-  }
   return (
     <>
-      <div className="welcome">
-        <div className="wlcome-home">
-          <h2>Welcome Back.</h2>
-          <p>Growing your business is just a click away</p>
-          <div className="homi-btn">
-            <button onClick={() => setPop(true)}>
-              <span>Let's Chat</span>{" "}
-              <i className="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
+      <div className="joint_us">
+        <div className="joint-home">
+        <div className="joint-home-heading">
+           <h2>Lorem Ipsum is simply dummy text</h2>
+           <h2>of the printing and typesetting.</h2>
+           </div>
+            <div className="joint-home-para">
+                <p>Nestohub app is a solution to major problems faced by builder & </p>
+                <p>broker and maximize their business.</p>
+            </div>
+            <button onClick={() => setPop(true)} className="joint-button">Join Us Now</button>
+        </div>
+        <div className="pic_joint">
+            <img src={manHome} alt="NoMan" />
         </div>
       </div>
 
-      <div className="transform">
-        <h2>Transform Your Business with Compass</h2>
-      
-        <div className="card">
-       
-          <div className="card-box">
-            <div className="card-box-1">
-                <img src={growBusiness} alt="" />
-            </div>
-            <div className="card-box-2">
-              <h2>Grow Your <br /> Business</h2>
-              <i className="fa-solid fa-arrow-right"></i>
-            </div>
+      <div className="real_estate">
+          <div className="first-real">
+             <div className="first-real-header">
+                <h2>Professional network for</h2>
+                <h2>real estate brokers</h2>
+             </div>
+             <div className="first-real-para">
+                <p>Broker Network app is a suite of services specifically designed for Indian</p>
+                <p>real estate brokers and developers to maximize their business.</p>
+             </div>
+
+             <div className="first-real-img">
+                <img src={google} alt="" />
+                <img className="se-imgasa" src={app} alt="" />
+             </div>
           </div>
-          <div className="card-box">
-            <div className="card-box-1">
-                <img src={growBusiness} alt="" />
-            </div>
-            <div className="card-box-2">
-              <h2>Save Time <br /> <span style={{visibility:'hidden'}}>hi</span> </h2>
-              <i className="fa-solid fa-arrow-right"></i>
-            </div>
+          <div className="second-real">
+               <img src={real} alt="" />
           </div>
-          <div className="card-box">
-            <div className="card-box-1">
-                <img src={growBusiness} alt="" />
-            </div>
-            <div className="card-box-2">
-              <h2>Elevate Your <br /> Marketing</h2>
-              <i className="fa-solid fa-arrow-right"></i>
-            </div>
-          </div>
-          <div className="card-box">
-            <div className="card-box-1">
-                <img src={growBusiness} alt="" />
-            </div>
-            <div className="card-box-2">
-              <h2>Empover Your <br /> Development</h2>
-              <i className="fa-solid fa-arrow-right"></i>
-            </div>
-          </div>
-         
-          </div>
+      </div>
+
     
-      </div>
-
-      <div className="quote">
-        <div className="quote-icon">
-        <i className="fa-solid fa-quote-left left-quo"></i>
-        </div>
-        <div className="quote-head">
-         <span>Compass exists to make agents more successful. We work for our agents, not the other way around.</span>
-         </div>
-         <div className="quote-icon">
-         <i className="fa-solid fa-quote-right right-quo"></i>
-        </div>
-        <div className="quote-para">
-            <p className="first-p">Robert Reffkin</p>
-            <p className="second-p">COMPASS FOUNDER & CEO</p>
-        </div>
-      </div>
-
-
-      <div className="see-how">
-      <div className="agent-secret">
-        <div className="agent">
-         <h2>See How Compass Agent</h2>
-         <h2>Bea Citron Achieved 2x</h2>
-         <h2>Increased Production</h2>
-        </div>
-        <div className="agent-1">
-           <p>Learn how the platform streamlines her team’s</p>
-           <p>transaction management, optimizes their</p>
-           <p>activities, and saves them time on marketing—</p>
-           <p>all so Bea can spend more time with her family.</p>
-        </div>
-        </div>
-
-        <div className="video-player">
-        <div className="vid-btn">
-            <button onClick={handlePlay}>Play</button>
-            <button onClick={handlePause}>Pause</button>
+      {/* =============third section============= */}
+         <div className="int-formation">
+            <div className="first-inform">
+               <div className="first-inform-heading">
+                  <h2>Lorem ipsum, in graphical</h2>
+                  <h2>and textual context.</h2>
+               </div>
+               <div className="first-inform-para">
+                   <p>Lorem ipsum,</p>
+                   <p>in graphical and textual</p>
+               </div>
+               <div className="second-inform-para">
+                   <p>Lorem ipsum, in graphical and textual context,</p>
+                   <p>refers to filler text that is placed in a document or visual presentation.</p>
+               </div>
+               <hr className="first-hras" />
+               <div className="third-inform-para">
+                 <p> 1 <span>Lorem ipsum, in graphical and textual context, refers to filler text that</span></p>
+               </div>
+               <hr className="second-hras" />
+               <div className="third-inform-para">
+                 <p> 2 <span>Lorem ipsum is derived from the Latin "dolorem ipsum.</span></p>
+               </div>
+               <hr className="second-hras" />
+               <div className="third-inform-para">
+                 <p> 3 <span>Lorem ipsum, in graphical and textual context, refers to filler placed.</span> </p>
+               </div>
+               <hr className="second-hras" />
             </div>
-            <video ref={videoRef} poster={post}  className="video" src={nesto}   > 
-            </video>
-          </div>
-          <div className="connect-btn">
-              <button onClick={() => setPop(true)}> <span>Connect to Learn More</span>  <i className="fa-solid fa-arrow-right"></i></button>
-          </div>
+            <div className="second-Inform">
+                 <img src={mansa} alt="" />
+            </div>
+         </div>
+      {/* ===============third section end============== */}
+
+     {/* ====================fourth-section=================== */}
+        <div className="company-benifits">
+           <div className="company-benifits-first">
+             <h2>Company Benefits & Statics</h2>
+             <div className="company-benifits-para">
+               <div className="company-benifits-flex">
+               <img src={radiobtn} alt="" />
+                <p>No dependency on bigger dealer for inventory</p>
+               </div>
+               <div className="company-benifits-flex">
+               <img src={radiobtn} alt="" />
+                <p>No Bias in getting premium inventory</p>
+               </div>
+               <div className="company-benifits-flex">
+               <img src={radiobtn} alt="" />
+                <p>Professional way to manage customer profiles for future references</p>
+               </div>
+               <div className="company-benifits-flex">
+               <img src={radiobtn} alt="" />
+                <p>Focus only on customer acquisition</p>
+               </div>
+               <div className="company-benifits-flex">
+               <img src={radiobtn} alt="" />
+                <p>Easy to track payment status</p>
+               </div>
+               <div className="company-benifits-flex">
+               <img src={radiobtn} alt="" />
+                <p>No tension of brokerage loss</p>
+               </div>
+               <div className="company-benifits-flex">
+               <img src={radiobtn} alt="" />
+                <p>Work with well known brand name which improves customer trust on broker</p>
+               </div>
+               <div className="company-benifits-flex">
+               <img src={radiobtn} alt="" />
+                <p>Easy to track payment status</p>
+               </div>
+             </div>
+             <button  className="benifits-button">Read More</button>
+           </div>
+           <div className="company-benifits-second">
+                <img src={benifits} alt="ben" />
+           </div>
+        </div>
+
+     {/* ==================fourth-section-end======================= */}
+         
+     {/* ==================fifth-section===================== */}
+     <div className="card-section">
+            <div className="card-box">
+              <img src={card1} alt="" />
+              <h2 className="headsr">Lorem ipsum, in graphical and textual</h2>
+              <div className="para-card">
+                  <p>Lorem ipsum, in graphical and textual context, refers to filler text that is placed in a document or visual presentation. Lorem ipsum is derived from the Latin "dolorem ipsum" roughly translated as "pain itself.
+                  Lorem ipsum, in graphical and textual context, refers to filler text that is placed in a document or visual.</p>
+              </div>
+              <div className="card-side">
+                <small>May 20th 2020</small>
+                <a href="#">Read more</a>
+              </div>
+            </div> 
+            <div className="card-box">
+              <img src={card2} alt="" />
+              <h2>Lorem ipsum, in graphical and textual</h2>
+              <div className="para-card">
+                  <p>Lorem ipsum, in graphical and textual context, refers to filler text that is placed in a document or visual presentation. Lorem ipsum is derived from the Latin "dolorem ipsum" roughly translated as "pain itself.
+                  Lorem ipsum, in graphical and textual context, refers to filler text that is placed in a document or visual.</p>
+              </div>
+              <div className="card-side">
+                <small>May 20th 2020</small>
+                <a href="#">Read more</a>
+              </div>
+            </div> 
+            <div className="card-box">
+              <img src={card3} alt="" />
+              <h2>Lorem ipsum, in graphical and textual</h2>
+              <div className="para-card">
+                  <p>Lorem ipsum, in graphical and textual context, refers to filler text that is placed in a document or visual presentation. Lorem ipsum is derived from the Latin "dolorem ipsum" roughly translated as "pain itself.
+                  Lorem ipsum, in graphical and textual context, refers to filler text that is placed in a document or visual.</p>
+              </div>
+              <div className="card-side">
+                <small>May 20th 2020</small>
+                <a href="#">Read more</a>
+              </div>
+            </div> 
       </div>
+     {/* ======================fifth-section-end===================== */}
+
+     {/* ===============sixth section====================== */}
+        <div className="women">
+            <div className="red-women">
+                <div className="first-red-women">
+                   <div className="first-red-heading">
+                      <h2>Lorem ipsum, in graphical and textual context, refers to filler text</h2>
+                   </div>
+                   <button className="enquiry-btn">Enqire now</button>
+                </div>
+                <div className="second-red-women">
+                   <img src={women} alt="wm" />
+                </div>
+            </div>
+        </div>
+     {/* =====================sixth section end================= */}
      {/* ===========================customer section=================== */}
-      <div className="our-customer">
+      {/* <div className="our-customer">
       <div className="customer-1">
           <h2>What our agents are <br /> saying</h2>
            <div className="custom-btn">
@@ -168,7 +241,6 @@ const Home = ({pop,setPop}) => {
                 <div className="swifters-js">
                      <div className="swifters-para">
                          <p className="fourt-para">“Because of Compass tools I am on track to </p>
-                         {/* triple, if not quadruple, my production year-over-year using Compass products. I love the fact that we are always improving and empowering agents by having a streamlined business system.” */}
                          <p className="fourt-para">triple, if not quadruple, my production year-</p>
                          <p className="fourt-para">over-year using Compass products. I love the fact </p>
                          <p className="fourt-para">that we are always improving and empowering </p>
@@ -197,7 +269,6 @@ const Home = ({pop,setPop}) => {
                 <div className="swifters-js">
                      <div className="swifters-para">
                          <p className="fourt-para">“Because of Compass tools I am on track to </p>
-                         {/* triple, if not quadruple, my production year-over-year using Compass products. I love the fact that we are always improving and empowering agents by having a streamlined business system.” */}
                          <p className="fourt-para">triple, if not quadruple, my production year-</p>
                          <p className="fourt-para">over-year using Compass products. I love the fact </p>
                          <p className="fourt-para">that we are always improving and empowering </p>
@@ -226,7 +297,6 @@ const Home = ({pop,setPop}) => {
                 <div className="swifters-js">
                      <div className="swifters-para">
                          <p className="fourt-para">“Because of Compass tools I am on track to </p>
-                         {/* triple, if not quadruple, my production year-over-year using Compass products. I love the fact that we are always improving and empowering agents by having a streamlined business system.” */}
                          <p className="fourt-para">triple, if not quadruple, my production year-</p>
                          <p className="fourt-para">over-year using Compass products. I love the fact </p>
                          <p className="fourt-para">that we are always improving and empowering </p>
@@ -239,9 +309,10 @@ const Home = ({pop,setPop}) => {
             </div>
         </SwiperSlide>
       </Swiper>
-     
-      </div>
 
+      
+      </div> */}
+     
       
       {
         pop && <HomePop setPop = {setPop}/>

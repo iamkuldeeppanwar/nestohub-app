@@ -1,4 +1,5 @@
-import React,{useState} from 'react'
+import React,{useState} from 'react';
+import logo from '../../images/logo.png';
 const Header = ({setPop}) => {
   const [click, setClick] = useState(false)
   const handleClick = () => setClick(!click)
@@ -19,7 +20,7 @@ const Header = ({setPop}) => {
     <div className={navColor ? 'header activeH' : 'header' }>
     <nav className='navbar'>
         <a href="!#"   className='logo'>
-            {/* <img src={logo} alt='logo' /> */}
+            <img src={logo} alt='logo' />
         </a>
         <div className='hamburger' onClick={handleClick}>
             {click ? (<i className="fa-solid fa-xmark"></i>)
@@ -28,12 +29,12 @@ const Header = ({setPop}) => {
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li  className='nav-item'>
-                <a href="!#"  onClick={closeMenu}>Home</a>
+                <a href="!#"  onClick={closeMenu}>Why Join Nestohub?</a>
             </li>
             <li  className='nav-item'>
-                <a href="!#"   onClick={closeMenu}>About us</a>
+                <a href="!#"   onClick={closeMenu}>Agent Case Studies</a>
             </li>
-            <li  className='nav-item'>
+            {/* <li  className='nav-item'>
                 <a href="!#"   onClick={closeMenu}>Our Brands</a>
             </li>
             <li  className='nav-item'>
@@ -47,10 +48,10 @@ const Header = ({setPop}) => {
 
             <li   className='nav-item'>
                 <a href='!#'   onClick={closeMenu}>Solutions</a>
-            </li>
+            </li> */}
 
             <li  className='nav-item'>
-             <span onClick={() => setPop(true)}> <button   className="btn-primary "  onClick={closeMenu}>Let's Chat <i className="fa-solid fa-arrow-right"></i></button></span>
+             <span onClick={() => setPop(true)}> <button className="btn-primary "  onClick={closeMenu}>Register/Sign In</button></span>
             </li>
         </ul>
     </nav>

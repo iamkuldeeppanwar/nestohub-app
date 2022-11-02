@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import axios from "axios";
+import axios  from "axios";
+import { GlobalState } from "../../../GlobalState";
+import { Alert } from "@mui/material";
 
 const steps = [
   "Create Account",
@@ -40,75 +42,130 @@ export default function Steeper() {
     city: "",
     area: "",
     whatsapp: "",
-    file: "",
-    file1: "",
-    file2: "",
-    file3: "",
   });
+
+  const state = useContext(GlobalState);
+  const [brok] = state.BrokerApi.brok;
+  const [callback,setCallback] = state.BrokerApi.callback;
 
   const [images,setImages] = useState(false);
 
-  const handleChange = async(e) => {
+
+  
+  const [images1,setImages1] = useState(false);
+  const [images2,setImages2] = useState(false);
+  const [images3,setImages3] = useState(false);
+
+ const handleUplaod = async(e) =>{
+    e.preventDefault();
+    try {
+      const file = e.target.files[0];
+      const file1 = e.target.files[0];
+      const file2 = e.target.files[0];
+      const file3 = e.target.files[0];
+    // window.alert(`${e.target.files[0].name} is Upload`);
+      if(!file || !file1 || !file2 || !file3)  return alert("Files doesnt exit");
+      if(file.size > 1024*1024 || file1.size > 1024*1024 || file2.size > 1024*1024 || file3.size > 1024*1024 ) 
+       return alert("size to large");
+
+       if(file.type!=='image/jpeg' && file.type!=='image/png' || file1.type!=='image/jpeg' && file1.type!=='image/png' || file2.type!=='image/jpeg' && file2.type!=='image/png' || file3.type!=='image/jpeg' && file3.type!=='image/png')
+       return alert("File Format is incorrect");
+       let formData = new FormData();
+       let formData1 = new FormData();
+       let formData2 = new FormData();
+       let formData3 = new FormData();
+       formData.append('file',file);
+       formData1.append('file1',file1);
+       formData2.append('file2',file2);
+       formData3.append('file3',file3);
+       const res = await axios.post('/api/upload',formData,formData1,formData2,formData3,{
+        headers: {'Content-Type': 'multipart/form-data'}
+       })
+
+       setImages(res.data);
+       setImages1(res.data);
+       setImages2(res.data);
+       setImages3(res.data);
+    } 
+    
+    catch (error) {
+       console.log(error.message);
+    }
+      
+ }
+
+ 
+
+ 
+  const handleChange = (e) => {
     // const {name,value} = e.target;
 
     if (document.getElementsByName(e.target.name)[0].nextElementSibling) {
       document.getElementsByName(e.target.name)[0].nextElementSibling.remove();
     }
 
-    if (
-      e.target.name === "file" ||
-      e.target.name === "file1" ||
-      e.target.name === "file2" ||
-      e.target.name === "file3"
-    ) {
-      setDetails({ ...details, [e.target.name]: e.target.files[0] });
-      e.preventDefault();
-      try {
-        if (!e.target.files[0]) return alert("Files doesnt exit");
+    // if (
+    //   e.target.name === "file" ||
+    //   e.target.name === "file1" ||
+    //   e.target.name === "file2" ||
+    //   e.target.name === "file3"
+    // ) {
+    //   setDetails({ ...details, [e.target.name]: e.target.files[0] });
+    //   e.preventDefault();
+    //   try {
+    //     if (!e.target.files[0]) return alert("Files doesnt exit");
 
-        if (e.target.files[0] > 1024 * 1024) return alert("size to large");
+    //     if (e.target.files[0] > 1024 * 1024) return alert("size to large");
 
-        if (
-          e.target.files[0] !== "image/jpeg" &&
-          e.target.files[0] !== "image/png"
-        )
-          return alert("file format is incorrect");
+    //     if (
+    //       e.target.files[0] !== "image/jpeg" &&
+    //       e.target.files[0] !== "image/png"
+    //     )
+    //       return alert("file format is incorrect");
 
-        let formData = new FormData();
-        formData.append("file", e.target.files[0]);
-        // formData.append("file1", e.target.files[0]);
-        // formData.append("file2", e.target.files[0]);
-        // formData.append("file3", e.target.files[0]);
-        console.log(formData);
-
-
-        const res = await axios.post('/api/upload',formData,{
-          headers: {'content-type': 'multipart/form-data'}
-      })
-
-      console.log(res.data);
-      setImages(res.data);
+    //     let formData = new FormData();
+    //     formData.append("file", e.target.files[0]);
+    //     formData.append("file1", e.target.files[0]);
+    //     formData.append("file2", e.target.files[0]);
+    //     formData.append("file3", e.target.files[0]);
+       
 
 
-      } 
-      catch (error) {
-        alert(error.response.data.msg)
-      }
+    //     const res = await axios.post('/api/upload',formData,{
+    //       headers: {'Content-Type': 'multipart/form-data', 'Authorization': ''}
+    //   })
 
-    } 
-    else {
+    //   console.log(res.data);
+    //   setImages(res.data);
+    //   } 
+    //   catch (error) {
+    //     alert(error.response.data.msg)
+    //   }
       setDetails({ ...details, [e.target.name]: e.target.value });
-    }
   };
+
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let resp = await axios.post("/api/broker", { ...details,images });
-      alert(resp.data.msg);
-    } catch (error) {
-      console.log("else");
-      alert(error.response.data.msg);
+      let resp = await axios.post("/api/broker", {...details,images})
+      let t = document.getElementById("git");
+      t.style.display="block"
+      t.innerText=`${resp.data.msg}`;
+      setTimeout(() => {
+        t.style.display="none";
+      }, 5000);
+      setCallback(!callback);
+    } 
+    
+    catch (error) {
+      let t = document.getElementById("fit");
+      t.style.display="block"
+      t.innerText=`${error.response.data.msg}`;
+      setTimeout(() => {
+        t.style.display="none";
+      }, 5000);
     }
   };
 
@@ -209,9 +266,14 @@ export default function Steeper() {
     height: "45px",
   };
 
+
+ 
+
   return (
     <Box sx={{ width: "100%" }}>
-      <Stepper activeStep={activeStep}>
+    <Alert id="git" style={{display:'none'}} severity="success">This is a success alert — check it </Alert>
+    <Alert id="fit" style={{display:'none'}}  severity="error"> </Alert>
+      <Stepper style={{marginTop:'20px'}} activeStep={activeStep}>
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};
@@ -243,7 +305,7 @@ export default function Steeper() {
       ) : (
         <>
           {/* <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography> */}
-
+        
           <form onSubmit={handleSubmit}>
             {activeStep === 0 && (
               <div className="wrapper">
@@ -276,7 +338,7 @@ export default function Steeper() {
                       <div className="inner-form">
                         <input
                           type="text"
-                          placeholder="First Name As Per Aadhar"
+                          placeholder="Mobile Number"
                           name="mobile"
                           required
                           value={details.mobile}
@@ -286,7 +348,7 @@ export default function Steeper() {
                       <div className="inner-form">
                         <input
                           type="email"
-                          placeholder="Last Name As Per Aadhar"
+                          placeholder="Email Address"
                           name="email"
                           value={details.email}
                           onChange={handleChange}
@@ -526,32 +588,39 @@ export default function Steeper() {
                   <div className="form">
                     <div className="top-form">
                       <div className="inner-form">
-                        <label htmlFor="">Photo of PAN</label>
+                     
+                        <label htmlFor="file">Photo of PAN</label>
                         <input
                           className="fileup"
                           type="file"
                           placeholder="Photo of Business Card / Shop (Optional)"
                           name="file"
-                          onChange={handleChange}
-                          required
+                          onChange={handleUplaod}
                         />
+                            <img width="100" height="100" src={images ? images.url : ''} alt="not" />
                       </div>
                       <div className="inner-form">
-                        <label htmlFor="">Photo of Aadhar</label>
+                   
+                        <label htmlFor="file1">Photo of Aadhar</label>
 
                         <input
                           className="fileup"
                           type="file"
                           placeholder="Rera Certification Copy"
                           name="file1"
-                          onChange={handleChange}
-                          required
+                          onChange={handleUplaod}
+                          
                         />
+                        
+                           <img width="100" height="100" src={images1 ? images1.url : ''} alt="no" />
+                        
+                         
                       </div>
                     </div>
                     <div className="top-form">
                       <div className="inner-form">
-                        <label htmlFor="">
+                    
+                        <label htmlFor="file2">
                           Photo of Business Card / Shop (Optional)
                         </label>
                         <input
@@ -559,12 +628,14 @@ export default function Steeper() {
                           type="file"
                           placeholder="Photo of Pan"
                           name="file2"
-                          onChange={handleChange}
-                          required
+                          onChange={handleUplaod}
+                          
                         />
+                         <img width="100" height="100" src={images2 ? images2.url : ''} alt="not" />
                       </div>
                       <div className="inner-form">
-                        <label htmlFor="">
+                    
+                        <label htmlFor="file3">
                           Rera Certification Copy (Optional)
                         </label>
                         <input
@@ -572,9 +643,10 @@ export default function Steeper() {
                           type="file"
                           placeholder="Photo of Aadhar"
                           name="file3"
-                          onChange={handleChange}
-                          required
+                          onChange={handleUplaod}
+                          
                         />
+                         <img width="100" height="100" src={images3 ? images3.url : ''} alt="not" />
                       </div>
                     </div>
                   </div>
@@ -583,7 +655,13 @@ export default function Steeper() {
             )}
             {activeStep === 5 && (
               <div className="wrapper">
-                <h2>Profile</h2>
+               {
+                brok.map(val=>{
+                  return (
+                    <h1 key={val._id} style={{color:'crimson'}}>{val.mobile}</h1>
+                  )
+                })
+               }
                 <div className="whatsapp-box">
                   <div className="imgs-what">
                     <img src="" alt="" />
@@ -619,6 +697,7 @@ export default function Steeper() {
                 Back
               </Button>
               <Box sx={{ flex: "1 1 auto" }} />
+
               {/* {isStepOptional(activeStep) && (
               <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
                 Skip
@@ -640,6 +719,7 @@ export default function Steeper() {
                 </Button>
               )}
             </Box>
+
           </form>
         </>
       )}
