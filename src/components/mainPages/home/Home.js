@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./styles.css";
 // import {  Navigation, Pagination, Keyboard } from "swiper";
-import HomePop from "./HomePop";
+// import HomePop from "./HomePop";
 import manHome from '../../../images/manHome.png';
 import app from '../../../images/app.png';
 import google from '../../../images/google-play.png';
@@ -19,8 +19,7 @@ import card1 from '../../../images/card1.png';
 import card2 from '../../../images/card2.png';
 import card3 from '../../../images/card3.png';
 import women from '../../../images/women.png';
-
-const Home = ({pop,setPop}) => {
+const Home = ({setPop}) => {
   
   return (
     <>
@@ -44,8 +43,8 @@ const Home = ({pop,setPop}) => {
       <div className="real_estate">
           <div className="first-real">
              <div className="first-real-header">
-                <h2>Professional network for</h2>
-                <h2>real estate brokers</h2>
+                <h2>India's first B2B PropTech platform</h2>
+                <h2>designed exclusively for brokers</h2>
              </div>
              <div className="first-real-para">
                 <p>Broker Network app is a suite of services specifically designed for Indian</p>
@@ -136,7 +135,7 @@ const Home = ({pop,setPop}) => {
                 <p>Easy to track payment status</p>
                </div>
              </div>
-             <button  className="benifits-button">Read More</button>
+             <button className="benifits-button">Read More</button>
            </div>
            <div className="company-benifits-second">
                 <img src={benifits} alt="ben" />
@@ -312,11 +311,9 @@ const Home = ({pop,setPop}) => {
 
       
       </div> */}
-     
-      
-      {
+      {/* {
         pop && <HomePop setPop = {setPop}/>
-      }
+      } */}
     </>
   );
 };

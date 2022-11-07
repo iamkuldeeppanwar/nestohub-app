@@ -1,12 +1,14 @@
 import React,{useState} from 'react';
 import logo from '../../images/logo.png';
-const Header = ({setPop}) => {
+import { NavLink } from 'react-router-dom';
+import HomePop from '../mainPages/home/HomePop';
+const Header = ({pop,setPop}) => {
   const [click, setClick] = useState(false)
   const handleClick = () => setClick(!click)
   const closeMenu = () => setClick(false)
   const [navColor,setNavColor]=useState(false);
   const changeNavColor =()=>{
-      if(window.scrollY >= 20){
+      if(window.scrollY >= 0){
           setNavColor(true)
       }
       else{
@@ -17,11 +19,12 @@ const Header = ({setPop}) => {
   window.addEventListener('scroll' ,changeNavColor);
 
   return (
+    <>
     <div className={navColor ? 'header activeH' : 'header' }>
     <nav className='navbar'>
-        <a href="!#"   className='logo'>
+        <NavLink to="/" exact   className='logo'>
             <img src={logo} alt='logo' />
-        </a>
+        </NavLink>
         <div className='hamburger' onClick={handleClick}>
             {click ? (<i className="fa-solid fa-xmark"></i>)
                 : (<i className="fa-solid fa-bars"></i>)}
@@ -29,33 +32,21 @@ const Header = ({setPop}) => {
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li  className='nav-item'>
-                <a href="!#"  onClick={closeMenu}>Why Join Nestohub?</a>
+                <NavLink to="/login"  exact onClick={closeMenu}>Why Join Nestohub?</NavLink>
             </li>
             <li  className='nav-item'>
                 <a href="!#"   onClick={closeMenu}>Agent Case Studies</a>
             </li>
-            {/* <li  className='nav-item'>
-                <a href="!#"   onClick={closeMenu}>Our Brands</a>
-            </li>
             <li  className='nav-item'>
-                <a href="!#"    onClick={closeMenu}>Blog</a>
-            </li>
-           
-
-            <li   className='nav-item'>
-                <a href='!#'    onClick={closeMenu}>Services</a>
-            </li>
-
-            <li   className='nav-item'>
-                <a href='!#'   onClick={closeMenu}>Solutions</a>
-            </li> */}
-
-            <li  className='nav-item'>
-             <span onClick={() => setPop(true)}> <button className="btn-primary "  onClick={closeMenu}>Register/Sign In</button></span>
+             <span onClick={() => setPop(true)}> <button className="btn-primary "  onClick={closeMenu}>Register Now for FREE</button></span>
             </li>
         </ul>
     </nav>
 </div>
+{
+    pop && <HomePop setPop={setPop}/>
+}
+</>
   )
 }
 

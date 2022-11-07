@@ -6,8 +6,10 @@ import youTube from '../../images/youTube.png';
 import home1 from '../../images/home1.png';
 import home2 from '../../images/home2.png';
 import home3 from '../../images/home3.png';
+import Globe from '../../images/globe.png';
 const Footer = () => {
   return (
+   <>
     <footer>
       <div className="foot">
         <div className='first-foot'>
@@ -39,12 +41,15 @@ Context, refers to filler text that</p>
                 <h2>Follow Us</h2>
             </div>
             <div className="social-links">
-                <span className='first'><img src={insta} alt="" /></span>
-                <span className='second'><img src={youTube} alt="" /></span>
-                <span className='third'><img src={twit} alt="" /></span>
+                <span className='first'><img src={insta} alt="ins" /></span>
+                <span className='second'><img src={youTube} alt="you" /></span>
+                <span className='third'><img src={twit} alt="tw" /></span>
             </div>
             <div className="input-era">
-               <select name="" id="">
+              <div className="earth-img">
+                <img src= {Globe} alt="" />
+              </div>
+               <select>
                   <option value="">English-En</option>
                </select>
             </div>
@@ -62,11 +67,13 @@ Context, refers to filler text that</p>
              </div>
         </div>
       </div>
-      <hr className='foot-hr' />
+     
+    </footer>
+    <hr className='foot-hr' />
       <div className="bottom-para">
         <p>© 2022 Dandelion | All Rights Reserved</p>
       </div>
-    </footer>
+      </>
   )
 }
 
