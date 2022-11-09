@@ -1262,7 +1262,7 @@ padding: 20px 0px;
   font-size: 17.5px;
 }
 
-/* ==================Login Mobile View CSS ===================*/
+/* ==================Login Mobile View CSS ==================*/
 @media only screen and (max-width: 600px) {
   .Login {
     display: block;
